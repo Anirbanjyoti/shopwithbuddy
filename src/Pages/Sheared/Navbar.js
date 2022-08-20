@@ -20,14 +20,19 @@ const Navbar = () => {
       <li>
         <Link to="/signup">Registration</Link>
       </li>
-      <li>
-        <Link to="/">Login</Link>
-      </li>
+
     </>
   );
+  const login = (
+    <>
+      <a href={Link}>
+        <Link to="/login">Login</Link>
+      </a>
+    </>
+  )
   return (
     <div>
-      <div class="navbar bg-accent text-white">
+      <div class="navbar bg-accent text-white py-3">
         <div class="navbar-start">
           <div class="dropdown">
             <label tabIndex="0" class="btn btn-ghost lg:hidden">
@@ -59,9 +64,9 @@ const Navbar = () => {
           <ul class="menu menu-horizontal p-0">{menuItems}</ul>
         </div>
         <div class="navbar-end">
-          <a href={Link} class="btn">
-            Get started
-          </a>
+          <button href={Link} class="btn bg-secondary text-black">
+            {login}
+          </button>
         </div>
       </div>
     </div>
