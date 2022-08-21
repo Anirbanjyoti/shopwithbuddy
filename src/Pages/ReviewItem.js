@@ -1,9 +1,12 @@
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrashAlt } from "@fortawesome/free-solid-svg-icons";
 
-const ReviewItem = ({ p }) => {
+const ReviewItem = ({ p, handleRemoveProduct }) => {
+
   return (
     <div className="w-3/4 mx-auto">
-      <div class="card card-side bg-base-100 shadow-xl">
+      <div class="card card-side items-center bg-base-100 shadow-xl">
         <figure className="w-40 p-2">
           <img src={p.img} alt="images" />
         </figure>
@@ -13,7 +16,11 @@ const ReviewItem = ({ p }) => {
           <p>Shipping:{p.shipping} </p>
           <p>Quantity: {p.quantity}</p>
         </div>
-        <button class="btn btn-primary">Delete</button>
+        <div className="pr-10">
+          <button onClick={()=>handleRemoveProduct(p)} class="btn bg-accent text-2xl text-red rounded-full">
+            <FontAwesomeIcon icon={faTrashAlt} />
+          </button>
+        </div>
       </div>
     </div>
   );
