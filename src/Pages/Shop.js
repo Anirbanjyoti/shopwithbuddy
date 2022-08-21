@@ -6,7 +6,7 @@ import Cart from "./Cart/Cart";
 import Product from "./Product";
 
 const Shop = () => {
-  const [products, setProducts] = useProducts();
+  const [products] = useProducts();
   const [cart, setCart] = useState([]);
 
   // pick data from localStorage
