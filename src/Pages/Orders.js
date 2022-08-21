@@ -1,16 +1,30 @@
-import React from 'react';
-import useCart from '../Hooks/useCart';
-import useProducts from '../Hooks/useProducts';
+import React from "react";
+import {Link} from "react-router-dom";
+import useCart from "../Hooks/useCart";
+import useProducts from "../Hooks/useProducts";
+import Cart from "./Cart/Cart";
 
 const Orders = () => {
-    const [products] = useProducts();
-    const [cart, setCart] = useCart(products);
-    return (
-        <div>
-            <h1>Total Orders: {products.length}</h1>
-            <h1>cart has: {cart.length}</h1>
+  const [products] = useProducts();
+  const [cart] = useCart(products);
+  return (
+    <div>
+      <div class="flex flex row justify-center p-20 pr-0">
+        <div className="lg:basis-3/4 md:basis-3/4 sm:basis-full">
+          <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-10"></div>
         </div>
-    );
+
+        <div className="lg:basis-1/4 md:basis-1/4 sm:basis-full xs:basis-full border-2 mx-10 rounded-lg p-10 bg-neutral">
+          <Cart cart={cart}></Cart>
+          <Link to="/orders">
+            <button className="bg-secondary rounded-lg px-10 py-2 mt-10">
+              Review Order{" "}
+            </button>
+          </Link>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default Orders;
