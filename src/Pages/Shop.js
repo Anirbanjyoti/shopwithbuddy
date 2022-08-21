@@ -44,9 +44,9 @@ const Shop = () => {
   };
   return (
     <div>
-      <div class="flex flex row justify-center p-20 pr-0">
+      <div class="lg:flex md:flex justify-center relative">
         <div className="lg:basis-3/4 md:basis-3/4 sm:basis-full">
-          <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-10">
+          <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-10 py-20 pl-20">
             {products.map((p) => (
               <Product
                 key={p._id}
@@ -57,7 +57,7 @@ const Shop = () => {
           </div>
         </div>
 
-        <div className="lg:basis-1/4 md:basis-1/4 sm:basis-full xs:basis-full border-2 mx-10 rounded-lg p-10 bg-neutral">
+        <div className="lg:basis-1/4 md:basis-1/4 sm:basis-full xs:basis-full border-2 ml-10 rounded-lg p-10 bg-neutral sticky top-0">
           <Cart cart={cart}></Cart>
           <Link to="/orders">
             <button className="bg-secondary rounded-lg px-10 py-2 mt-10">Review Order </button>

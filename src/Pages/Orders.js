@@ -32,9 +32,9 @@ const Orders = () => {
 
         <div className="lg:basis-1/4 md:basis-1/4 sm:basis-full xs:basis-full border-2 mx-10 rounded-lg p-10 bg-neutral">
           <Cart cart={cart}>
-          <Link to="/orders">
+          <Link to="/inventory">
             <button className="bg-secondary rounded-lg px-10 py-2 mt-10">
-              Review Order{" "}
+              Proceed to Checkout{" "}
             </button>
           </Link>
           </Cart>
