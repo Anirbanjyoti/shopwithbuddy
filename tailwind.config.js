@@ -5,10 +5,11 @@ module.exports = {
     themes: [
       {
         partstheme: {
-          primary: "#EAEAEA",
+          primary: "#617000",
           secondary: "#C7B340",
           accent: "#3A4256",
-          neutral: "#3d4451",
+          // neutral: "#3d4451",
+          neutral: "#ECEEF0",
           "base-100": "#ffffff",
         },
       },

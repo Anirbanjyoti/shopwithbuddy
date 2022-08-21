@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import logo from '../../Assets/Images/download.png';
 
 const Navbar = () => {
   const menuItems = (
@@ -32,7 +33,7 @@ const Navbar = () => {
   )
   return (
     <div>
-      <div class="navbar bg-accent text-white py-3">
+      <div class="navbar bg-primary font-bold text-white py-3">
         <div class="navbar-start">
           <div class="dropdown">
             <label tabIndex="0" class="btn btn-ghost lg:hidden">
@@ -53,12 +54,14 @@ const Navbar = () => {
             </label>
             <ul
               tabIndex="0"
-              class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+              class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-primary rounded-box w-52"
             >
               {menuItems}
             </ul>
           </div>
-          <Link to='/shop' class="btn btn-ghost normal-case text-xl">Shopwithbuddy</Link>
+          <Link to='/shop' class="w-1/2 rounded-lg">
+          <img src={logo} alt='images'></img>
+          </Link>
         </div>
         <div class="navbar-center hidden lg:flex">
           <ul class="menu menu-horizontal p-0">{menuItems}</ul>
