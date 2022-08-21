@@ -33,9 +33,7 @@ const Shop = () => {
       selectedProduct.quantity = 1;
       newCart = [...cart, selectedProduct];
     } else {
-      const rest = cart.filter(
-        (p) => p._id !== selectedProduct._id
-      );
+      const rest = cart.filter((p) => p._id !== selectedProduct._id);
       exists.quantity = exists.quantity + 1;
       newCart = [...rest, exists];
     }
@@ -60,9 +58,10 @@ const Shop = () => {
         <div className="lg:basis-1/4 md:basis-1/4 sm:basis-full xs:basis-full border-2 ml-10 rounded-lg p-10 bg-neutral sticky top-0">
           <Cart cart={cart}></Cart>
           <Link to="/orders">
-            <button className="bg-secondary rounded-lg px-10 py-2 mt-10">Review Order </button>
+            <button className="bg-secondary rounded-lg px-10 py-2 mt-10">
+              Review Order{" "}
+            </button>
           </Link>
-          
         </div>
       </div>
     </div>

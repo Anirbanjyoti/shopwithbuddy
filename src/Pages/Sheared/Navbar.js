@@ -1,8 +1,17 @@
+import { signOut } from "firebase/auth";
 import React from "react";
 import { Link } from "react-router-dom";
 import logo from "../../Assets/Images/download.png";
+import auth from "../../firebase.init";
+import { useAuthState } from "react-firebase-hooks/auth";
 
 const Navbar = () => {
+  const [user] = useAuthState(auth);
+
+  const logout = () => {
+    signOut(auth);
+    // localStorage.removeItem('accessToken');
+  };
   const menuItems = (
     <>
       <li>
@@ -23,11 +32,16 @@ const Navbar = () => {
       </li>
     </>
   );
+  
   const login = (
     <>
-      <a href={Link}>
+      {user ? (
+        <button className="btn btn-ghost" onClick={logout}>
+          Sign Out
+        </button>
+      ) : (
         <Link to="/login">Login</Link>
-      </a>
+      )}
     </>
   );
   return (
@@ -66,6 +80,7 @@ const Navbar = () => {
           <ul class="menu menu-horizontal p-0">{menuItems}</ul>
         </div>
         <div class="navbar-end">
+        {user && user.displayName}
           <button href={Link} class="btn bg-secondary text-black">
             {login}
           </button>
