@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import logo from '../../Assets/Images/download.png';
+import logo from "../../Assets/Images/download.png";
 
 const Navbar = () => {
   const menuItems = (
@@ -21,7 +21,6 @@ const Navbar = () => {
       <li>
         <Link to="/signup">Registration</Link>
       </li>
-
     </>
   );
   const login = (
@@ -30,7 +29,7 @@ const Navbar = () => {
         <Link to="/login">Login</Link>
       </a>
     </>
-  )
+  );
   return (
     <div>
       <div class="navbar bg-primary font-bold text-white py-3">
@@ -59,8 +58,8 @@ const Navbar = () => {
               {menuItems}
             </ul>
           </div>
-          <Link to='/shop' class="w-1/2 rounded-lg">
-          <img src={logo} alt='images'></img>
+          <Link to="/shop" class="w-1/2 rounded-lg">
+            <img src={logo} alt="images"></img>
           </Link>
         </div>
         <div class="navbar-center hidden lg:flex">
