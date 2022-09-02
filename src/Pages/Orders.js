@@ -17,7 +17,7 @@ const Orders = () => {
   };
   return (
     <div>
-      <div class="flex flex row justify-center p-20 pr-0">
+      <div className="flex flex row justify-center p-20 pr-0">
         <div className="lg:basis-3/4 md:basis-3/4 sm:basis-full">
           <div className="grid lg:grid-cols-1 md:grid-cols-1 sm:grid-cols-1 gap-10">
             {cart.map((p) => (

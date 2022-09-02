@@ -3,14 +3,14 @@ import { getStoredCart } from "../utilities/fakedb";
 
 const useCart = (products) => {
   const [cart, setCart] = useState([]);
-
+  
   // pick data from localStorage
   useEffect(() => {
     const storedCart = getStoredCart();
     const savedCart = [];
     for (const _id in storedCart) {
       const addedProduct = products?.find((p) => p._id === _id);
-      console.log(addedProduct);
+      // console.log(addedProduct);
       if (addedProduct) {
         const quantity = storedCart[_id];
         addedProduct.quantity = quantity;

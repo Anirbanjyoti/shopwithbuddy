@@ -1,29 +1,14 @@
-import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import useCart from "../Hooks/useCart";
 import useProducts from "../Hooks/useProducts";
-import { addToDb, getStoredCart } from "../utilities/fakedb";
+import { addToDb } from "../utilities/fakedb";
 import Cart from "./Cart/Cart";
 import Product from "./Product";
 
 const Shop = () => {
   const [products] = useProducts();
-  const [cart, setCart] = useState([]);
-
   // pick data from localStorage
-  useEffect(() => {
-    const storedCart = getStoredCart();
-    const savedCart = [];
-    for (const _id in storedCart) {
-      const addedProduct = products.find((p) => p._id === _id);
-      console.log(addedProduct);
-      if (addedProduct) {
-        const quantity = storedCart[_id];
-        addedProduct.quantity = quantity;
-        savedCart.push(addedProduct);
-      }
-    }
-    setCart(savedCart);
-  }, [products]);
+  const [cart, setCart] = useCart(products)
 
   const handleAddToCart = (selectedProduct) => {
     console.log(selectedProduct);
@@ -42,7 +27,7 @@ const Shop = () => {
   };
   return (
     <div>
-      <div class="lg:flex md:flex justify-center relative">
+      <div className="lg:flex md:flex justify-center relative">
         <div className="lg:basis-3/4 md:basis-3/4 sm:basis-full">
           <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-10 py-20 pl-20">
             {products.map((p) => (
